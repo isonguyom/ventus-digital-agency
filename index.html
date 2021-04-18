@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="keywords" content="Digital Agency, Websites, Web Design, Branding">
+    <meta name="description" content="Digital Agency Services">
+    <meta name="author" content="ISONGUYO MARTIN">
+    <title>Ventus Digital Agency(VeDiA)</title>
+    <link rel="icon" type="image/png" href="./images/icon.png" />
+    <link rel="stylesheet" href="./css/all.min.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/css2?family=Oleo+Script&display=swap" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <header class="vedia-landing-page">
+        <!--header covers the entire landing page-->
+        <nav>
+            <div class="vedia-menubar-container" id="menu">
+                <div class="vedia-menubar" id="menuBar">
+                    <div class="menu-logo">
+                        <a href="#"><img src="./images/logo-black.png" alt="logo"></a>
+                    </div>
+                    <ul class="vedia-menu">
+                        <li><a href="index.html" class="active nav-link">Home</a></li>
+                        <li><a href="#aboutUs" class="nav-link">About</a></li>
+                        <li><a href="#services" class="nav-link">Services</a></li>
+                        <li><a href="#blog" class="nav-link">Our Blog</a></li>
+                        <li><a href="#contact" class="nav-link">Contact</a></li>
+                    </ul>
+                    <div class="menu-close">
+                        <a href="#" onclick="displayMenu()">&times;</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="fixed-nav fixed-logo hide">
+                <!-- Two logos to display in different background -->
+                <div class="js-replace-logo  js-replace-logo_active">
+                    <div class="vedia-logo-cover">
+                        <a href="#" class="vedia-logo"><img src="./images/logo.png" alt="logo"></a>
+                    </div>
+                </div>
+                <div class="js-replace-logo">
+                    <div class="vedia-logo-cover">
+                        <a href="#" class="vedia-logo"><img src="./images/logo-black.png" alt="logo black"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="fixed-nav fixed-hamburger hide">
+                <!-- two hamburger icon, similar to the logo situation -->
+                <button onclick="displayMenu()" id="toggler1"
+                    class="vedia-toggler hamburger--3dx vedia-nav-toggler hide js-replace-logo  js-replace-logo_active">
+                    <span class="hamburger-box vedia-logo-cover">
+                        <span class="hamburger-inner vedia-hamburger"></span>
+                    </span>
+                </button>
+                <button onclick="displayMenu()" id="toggler2"
+                    class="vedia-toggler hamburger--3dx vedia-nav-toggler hide js-replace-logo">
+                    <span class="hamburger-box vedia-logo-cover">
+                        <span class="hamburger-inner vedia-hamburger hamburger-black"></span>
+                    </span>
+                </button>
+            </div>
+        </nav>
+
+        <div class="vedia-landing-text">
+            <h3>Create your imaginations</h3>
+            <h4>with</h4>
+            <h1 class="title">Ventus digital Agency</h1>
+            <button type="button" class="landingbtn"><span>Let's do business </span></button>
+        </div>
+    </header>
+
+    <main>
+        <section id="aboutUs" class="vedia-about">
+            <h2 class="mobile-header hide">Get to know us</h2>
+            <div class="vedia-row">
+                <div class="about-video hide">
+                    <iframe src="https://youtu.be/embed/fM0JGAt0CNE"></iframe>
+                </div>
+                <div class="about-text hide bg-primary">
+                    <h2 class="lg-header">Get to know us</h2>
+                    <p>
+                        We are here to give your business the digital feeling. Our services include web design and
+                        development,
+                        branding, digital marketing, social media promotion, digital skills training and more. At VeDiA
+                        we
+                        value excellence that is what motivates us into accomplishing our wonderful projects.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="services" class="vedia-services">
+            <h2 class="vedia-header hide">How we can serve you</h2>
+            <div class="vedia-row">
+                <div class="hide">
+                    <h4>WEB DEVELOPMENT</h4>
+                    <img src="./images/undraw_web_developer_p3e5.svg" alt="web developer">
+                    <p>
+                        We design and develop market leading websites that deliver a great first impression
+                        and convert visitors into customer.<br><br>
+                        <a href="">Read More <i class="fas fa-long-arrow-alt-right"></i></a>
+                    </p>
+                </div>
+                <div class="hide">
+                    <h4>BRANDING</h4>
+                    <img src="./images/undraw_icon_design_qvdf.svg" alt="branding">
+                    <p>
+                        We deliver strong memorable brand identities, logotype, typography, colour palette,
+                        illustration and brand guides. <br><br>
+                        <a href="">Read More <i class="fas fa-long-arrow-alt-right"></i></a>
+                    </p>
+                </div>
+                <div class="hide">
+                    <h4>DIGITAL MARKETING</h4>
+                    <img src="./images/undraw_mobile_marketing_iqbr.svg" alt="digital marketing">
+                    <p> Targeted and results-driven digital marketing that increases brand awareness,
+                        quality business enquiries and visitor footfall. <br><br>
+                        <a href="">Read More <i class="fas fa-long-arrow-alt-right"></i></a>
+                    </p>
+                </div>
+                <div class="hide">
+                    <h4>TRAINING</h4>
+                    <img src="./images/undraw_teacher_35j2.svg" alt="training">
+                    <p>
+                        We deliver professionally crafted, compelling, comprehensible and secure online and offline
+                        training.<br><br>
+                        <a href="">Read More <i class="fas fa-long-arrow-alt-right"></i></a>
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="coreValues" class="vedia-values bg-primary">
+            <div class="vedia-row">
+                <div>
+                    <h2 class="vedia-header hide">VeDiA Core Values</h2>
+                </div>
+                <div class="vedia-col">
+                    <div class="core value1 hide">
+                        <div>
+                            <i class="fas fa-handshake c-icon"></i>
+                        </div>
+                        <div class="values-text">
+                            <h4>Integrity</h4>
+                            <small>What we say is what we do.</small>
+                        </div>
+                    </div>
+                    <div class="core value2 hide">
+                        <div>
+                            <i class="fas fa-graduation-cap c-icon"></i>
+                        </div>
+                        <div class="values-text">
+                            <h4>Excellence</h4>
+                            <small>We offer the best available services.</small>
+                        </div>
+                    </div>
+                    <div class="core value3 hide">
+                        <div>
+                            <i class="fas fa-brain c-icon"></i>
+                        </div>
+                        <div class="values-text">
+                            <h4>Creativity</h4>
+                            <small>Each project is unique.</small>
+                        </div>
+                    </div>
+                    <div class="core value4 hide">
+                        <div>
+                            <i class="fas fa-random c-icon"></i>
+                        </div>
+                        <div class="values-text">
+                            <h4>Flexibility</h4>
+                            <small>We adapt to advancement in technology.</small>
+                        </div>
+                    </div>
+                    <div class="core value5 hide">
+                        <div>
+                            <i class="fas fa-stopwatch c-icon"></i>
+                        </div>
+                        <div class="values-text">
+                            <h4>Promptness</h4>
+                            <small>Adhering to designated time is our pride.</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="vedia-projects">
+            <h2 class="vedia-header hide">Projects we have completed</h2>
+            <div class="vedia-row">
+                <div class="cont hide">
+                    <a href="#">
+                        <img src="./images/blengs.png" alt="">
+                    </a>
+                    <div class="middle">
+                        <a href="#" class="web-name">Blengs</a>
+                    </div>
+                </div>
+                <div class="cont hide">
+                    <a href="#">
+                        <img src="./images/webdev.png" alt="">
+                    </a>
+                    <div class="middle">
+                        <a href="#" class="web-name">webdev</a>
+                    </div>
+                </div>
+                <div class="cont hide">
+                    <a href="#">
+                        <img src="./images/Pulse.png" alt="">
+                    </a>
+                    <div class="middle">
+                        <a href="#" class="web-name">Pulse.</a>
+                    </div>
+                </div>
+                <div class="cont hide">
+                    <a href="#">
+                        <img src="./images/luciano.png" alt="">
+                    </a>
+                    <div class="middle">
+                        <a href="#" class="web-name">Luciano</a>
+                    </div>
+                </div>
+            </div>
+            <button class="projectsbtn" type="button">VIEW MORE</button>
+        </section>
+
+        <section id="testimonials" class="vedia-testimonials">
+            <h2 class="vedia-header hide">Testimonials</h2>
+            <div class="testi-slides hide">
+                <div class="client hide">
+                    <div class="client-row">
+                        <div class="client-img">
+                            <img src="./images/client1-david-peterson.jpeg" alt="David Peterson"><br>
+                        </div>
+                        <div class="quote">
+                            <i class="fa fa-quote-left i-left"></i>
+                            Magni ut laboriosam quae autem deleniti assumenda vitae, minima quos.
+                            Ut, similique quos minimaad iste doloribus ipsam saepe laboriosam voluptatibus accusantium!
+                            <i class="fa fa-quote-right i-right"></i><br><br>
+                            <b>DAVID Peterson - Simpsons Group</b>
+                        </div>
+                    </div>
+                </div>
+                <div class="client hide">
+                    <div class="client-row">
+                        <div class="client-img">
+                            <img src="images/client2-john-ekpat.jpeg" alt="John Ekpat"><br>
+                        </div>
+                        <div class="quote">
+                            <i class="fa fa-quote-left i-left"></i>
+                            ipsum dolor sit amet consectetur adipisicing elit. Magni ut laboriosam
+                            quae autem deleniti assumenda vitae, minima quos.
+                            <i class="fa fa-quote-right i-right"></i><br><br>
+                            <b>JOHN Ekpat - Ekpatico Nigeria Limited</b>
+                        </div>
+                    </div>
+                </div>
+                <div class="client hide">
+                    <div class="client-row">
+                        <div class="client-img">
+                            <img src="images/client3-ephraim-jegede.jpeg" alt="Ephraim Jegede"><br>
+                        </div>
+
+                        <div class="quote">
+                            <i class="fa fa-quote-left i-left"></i>
+                            Laboriosam quae autem deleniti assumenda vitae, minima quos. Ut, similique quos minima
+                            ad iste doloribus ipsam saepe laboriosam voluptatibus accusantium!
+                            <i class="fa fa-quote-right i-right"></i><br><br>
+                            <b>EPHRAIM Jegede - Jegede & Sons Ltd.</b>
+                        </div>
+                    </div>
+                </div>
+                <div class="client hide">
+                    <div class="client-row">
+                        <div class="client-img">
+                            <img src="images/client4-agnes-nnorom.jpeg" alt=" Agnes Nnorom"><br>
+                        </div>
+                        <div class="quote">
+                            <i class="fa fa-quote-left i-left"></i>
+                            Ut, similique quos minima ad iste doloribus ipsam saepe laboriosam voluptatibus accusantium!
+                            <i class="fa fa-quote-right i-right"></i><br><br>
+                            <b>AGNES Nnorom - Turfmore Nigeria Limited</b>
+                        </div>
+                    </div>
+                </div>
+                <div class="client hide">
+                    <div class="client-row">
+                        <div class="client-img">
+                            <img src="images/client5-ima-akpan.jpeg" alt="Ima Akpan"><br>
+                        </div>
+                        <div class="quote">
+                            <i class="fa fa-quote-left i-left"></i>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni ut laboriosam
+                            quae autem deleniti assumenda vitae, minima quos.
+                            <i class="fa fa-quote-right i-right"></i><br><br>
+                            <b>IMA Akpan - Elegant Collections</b>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="vedia-blog" id="blog">
+            <h2 class="vedia-header hide">Our blog</h2>
+            <div class="v-slides hide">
+                <div class="vSlide-1 hide">
+                    <video width="320" height="240" controls poster="./images/blog-video-poster.jpg">
+                        <source src="./videos/blogpost1.mp4" type="video/mp4">
+                        <source src="movie.ogg" type="video/ogg">
+                        Your browser does not support the video tag.
+                    </video>
+                    <h4><a href="#">Coding best practices</a></h4>
+                </div>
+                <div class="vSlide-2 hide">
+                    <img src="./images/blogpost2.jpg" alt="post 2">
+                    <h4><a href="#">Web development in the 21st century</a></h4>
+                </div>
+                <div class="vSlide-3 hide">
+                    <img src="./images/blogpost3.jpg" alt="post 3">
+                    <h4><a href="#">Why you should build a reliable team</a></h4>
+                </div>
+                <div class="vSlide-4 hide">
+                    <img src="./images/blogpost4.jpg" alt="post 4">
+                    <h4><a href="#">your gadgets can do more</a></h4>
+                </div>
+                <div class="vSlide-5 hide">
+                    <img src="./images/blogpost5.jpg" alt="post 5">
+                    <h4><a href="#">Presentation in the digital space</a></h4>
+                </div>
+            </div>
+            <button class="blogbtn">READ MORE</button>
+        </section>
+    </main>
+
+    <footer>
+        <section id="partners" class="vedia-partners">
+            <h2 class="vedia-header hide">Credit</h2>
+            <div class="vedia-row hide">
+                <a href="https://theroothub.com/">
+                    <img src="images/roothub.png" alt="roothub" title="Roothub">
+                </a>
+                <a href="https://www.google.com/">
+                    <img src="images/google.png" alt="google" title="Google">
+                </a>
+                <a href="https://onlinepngtools.com/">
+                    <img src="images/onlinepngtools.png" alt="onlinepngtools" title="Onlinepngtools">
+                </a>
+                <a href="https://dribbble.com/">
+                    <img src="images/dribbble.png" alt="dribbble" title="Dribbble">
+                </a>
+                <a href="https://stackoverflow.com/">
+                    <img src="images/stackoverflow.png" alt="stack overflow" title="Stack Overflow">
+                </a>
+                <a href="https://www.remove.bg/">
+                    <img src="images/removebg.svg" alt="remove background" title="Remove Background">
+                </a>
+                <a href="https://undraw.co/">
+                    <img src="images/undraw.png" alt="undraw" title="Undraw" class="round-logo">
+                </a>
+                <a href="https://www.canva.com/">
+                    <img src="images/canva.png" alt="canva" title="Canva" class="round-logo">
+                </a>
+                <a href="https://inkscape.org/">
+                    <img src="images/inkscape.png" alt="inkscape" title="Inkscape" class="round-logo">
+                </a>
+                <a href="https://fontawesome.com/">
+                    <img src="images/fontawesome.png" alt="font awesome" title="Font Awesome" class="round-logo">
+                </a>
+                <a href="https://www.w3schools.com/">
+                    <img src="images/w3schools.png" alt="W3 schools" title="W3 Schools" class="round-logo">
+                </a>
+            </div>
+        </section>
+
+        <section class="footer bg-primary">
+            <div class="vedia-row hide">
+                <div>
+                    <h3>Links</h3>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Web development/Design</a></li>
+                        <li><a href="#">Branding</a></li>
+                        <li><a href="#">training</a></li>
+                        <li><a href="#">digital marketing</a></li>
+                        <li><a href="#">Our Team</a></li>
+                        <li><a href="#">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="contact hide" id="contact">
+                    <h3>Contact</h3>
+                    <address>
+                        <span><i class="fas fa-map-marker-alt"></i> <b>Office:</b></span> 3, Web Street, Tech World.<br>
+                        <span><i class="fas fa-phone-alt"></i> <b>Tel:</b></span> 0000-000-0000 <br>
+                        <span><i class="fas fa-envelope"></i> <b>Email:</b></span> <a
+                            href="mailto:admin@vedia.com">admin@vedia.com</a><br>
+                    </address>
+                    <div class="social">
+                        <a href="#"><i class="fab fa-facebook-square"></i></a>
+                        <a href="#"><i class="fab fa-twitter-square"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-youtube-square"></i></a>
+                    </div>
+                </div>
+                <div class="hide newsletter">
+                    <h3>Newsletter</h3>
+                    <input type="email" placeholder="Your Email">
+                    <input type="submit" value="Subscribe">
+                </div>
+            </div>
+        </section>
+        <section class="copyright">
+            <h2 style="display: none;">copyright</h2>
+            <p>
+                © 2020 <a href="./index.html" class="">Ventus Digital Agency(VeDiA)</a> All rights reserved.
+            </p>
+        </section>
+    </footer>
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- <script src="./js/all.min.js"></script> -->
+    <script src="./js/script.js"></script>
+</body>
+
+</html>

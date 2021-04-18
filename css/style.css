@@ -1,0 +1,1240 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --pri-color: yellowgreen;
+    --sec-color: silver;
+    --gutter: 2rem;
+    --replace-offset: 100%;
+    --replace-offset-2: calc((100% - var(--replace-offset)) * -1);
+    --title-font: 'Oleo Script', cursive;
+}
+
+html {
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+    font-size: 100%;
+}
+
+body {
+    font-family: lato, Calibri, arial, 'san serif';
+    line-height: 1.9em;
+    scroll-behavior: smooth;
+}
+
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+a {
+    text-decoration: none;
+    color: var(--pri-color);
+    transition: all 0.3s;
+}
+
+p {
+    opacity: 0.7;
+}
+
+.title {
+    font-family: var(--title-font);
+}
+
+button {
+    padding: 1em;
+    background-color: var(--pri-color);
+    color: black;
+    font-size: 0.9rem;
+    border: none;
+    margin-top: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 1s ease;
+    text-transform: uppercase;
+}
+
+button:hover {
+    background-color: var(--sec-color);
+}
+
+header {
+    width: 100%;
+    min-height: 100vh;
+    background: url("../images/landing-page-image.jpg") center no-repeat fixed;
+    background-size: cover;
+    background-color: rgb(22, 22, 22);
+    background-blend-mode: soft-light;
+    position: relative;
+    padding-bottom: 1em;
+}
+
+
+/*======================================================================================================================
+=                                       Vedia Navigation Menu Styling                                                   =
+=======================================================================================================================*/
+nav {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
+
+.vedia-menubar-container {
+    display: none;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    position: fixed;
+    background-color: rgba(31, 31, 31, 0.5);
+}
+
+/* Menu */
+.vedia-menubar {
+    background-color: var(--pri-color);
+    width: 0;
+    text-align: center;
+    padding: 1em 0;
+    position: absolute;
+    font-family: var(--title-font);
+    overflow: hidden;
+    animation: grow 1s ease forwards;
+    height: 100vh;
+}
+
+.menu-active {
+    display: block;
+    overflow: hidden;
+}
+
+.vedia-menubar ul {
+    list-style: none;
+    width: 100%;
+    padding: 0.5em;
+}
+
+.vedia-menubar ul li {
+    animation: slideUp .7s ease forwards .1s;
+    position: relative;
+    overflow: hidden;
+    width: fit-content;
+    margin: auto;
+}
+
+.vedia-menubar ul li a,
+.menu-close a {
+    display: block;
+    text-decoration: none;
+    color: black;
+    padding: 1em;
+    font-size: 1.2rem;
+    opacity: 0;
+    animation: fadeIn 0.7s ease forwards .3s;
+}
+
+
+.menu-close a {
+    font-size: 2rem;
+    color: black;
+}
+
+.vedia-menubar ul li a.active {
+    font-weight: bolder;
+    text-decoration: underline;
+}
+
+.vedia-menubar ul li a:active {
+    font-weight: bolder;
+    text-decoration: underline;
+}
+
+.vedia-menubar ul li a:hover {
+    font-weight: bolder;
+    opacity: 1;
+}
+
+.menu-logo {
+    opacity: 0;
+    animation: fadeIn 0.5s ease forwards .5s;
+}
+
+@keyframes grow {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes fadeIn {
+    100% {
+        opacity: 0.7;
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes slideUp {
+    100% {
+        transform: translateY(0);
+    }
+}
+
+
+/*================================================ fixed Navbar=============================== */
+/* Logo & hamburger */
+.fixed-nav {
+    position: absolute;
+    /* the logo and hambuger icon are not fixed on mobile screen */
+    z-index: 10;
+    padding: 0.8em;
+    display: grid;
+}
+
+.js-replace-logo {
+    grid-row: -1 / 1;
+    grid-column: -1 / 1;
+    overflow: hidden;
+    will-change: transform;
+    transform: translateY(calc(var(--replace-offset) * 1));
+}
+
+.vedia-logo-cover {
+    will-change: transform;
+    transform: translateY(calc(var(--replace-offset) * -1));
+}
+
+/* previous replace item*/
+.js-replace-logo_active {
+    transform: translateY(calc(var(--replace-offset-2) * 1));
+}
+
+.js-replace-logo_active .vedia-logo-cover {
+    transform: translateY(calc(var(--replace-offset-2) * -1));
+}
+
+/* REVERSE ANIMATION */
+.fixed-nav_reverse .js-replace-logo {
+    transform: translateY(calc(var(--replace-offset-2) * 1));
+}
+
+.fixed-nav_reverse .vedia-logo-cover {
+    transform: translateY(calc(var(--replace-offset-2) * -1));
+}
+
+/* previous replace item*/
+.fixed-nav_reverse .js-replace-logo_active {
+    transform: translateY(calc(var(--replace-offset) * 1));
+}
+
+.fixed-nav_reverse .js-replace-logo_active .vedia-logo-cover {
+    transform: translateY(calc(var(--replace-offset) * -1));
+}
+
+.vedia-toggler:hover,
+.vedia-logo:hover {
+    opacity: 0.8;
+    background-color: transparent;
+}
+
+/* special logo styling */
+.fixed-logo.hide-logo {
+    display: none;
+}
+
+.vedia-logo img {
+    width: 70%;
+}
+
+/*----------------- Harmburger------------ */
+.fixed-hamburger {
+    right: 0;
+}
+
+.vedia-toggler {
+    border: none;
+    background-color: transparent;
+    transition: 0.1s linear;
+    cursor: pointer;
+    overflow: visible;
+    padding: 0;
+    margin: 0;
+}
+
+.vedia-toggler:focus {
+    border: none;
+    outline: none;
+}
+
+/* ---------------------creating the hamburger icon----------------- */
+.hamburger-box {
+    width: 40px;
+    height: 24px;
+    display: inline-block;
+    position: relative;
+    text-align: right;
+}
+
+.vedia-hamburger::before,
+.vedia-hamburger::after {
+    content: "";
+    display: block;
+    width: 40px;
+    height: 4px;
+    background-color: yellowgreen;
+    border-radius: 4px;
+    position: absolute;
+    transition-property: transform;
+    transition-duration: 0.15s;
+    transition-timing-function: ease;
+}
+
+.hamburger-black::before,
+.hamburger-black::after {
+    background-color: black;
+}
+
+.vedia-hamburger::before {
+    top: -10px;
+}
+
+.vedia-hamburger::after {
+    bottom: -10px;
+}
+
+.vedia-hamburger {
+    display: block;
+    width: 20px;
+    height: 4px;
+    background-color: yellowgreen;
+    border-radius: 4px;
+    transition-property: transform;
+    transition-duration: 0.15s;
+    transition-timing-function: ease;
+    position: absolute;
+    top: 50%;
+}
+
+#toggler2.toggler_disappear {
+    display: none;
+}
+
+.hamburger-black {
+    background-color: black;
+}
+
+/* --------------------------------Harmburger 3DX effect------------*/
+.hamburger--3dx .hamburger-box {
+    perspective: 80px;
+}
+
+.hamburger--3dx .hamburger-inner {
+    transition: transform 0.15s cubic-bezier(0.645, 0.045, 0.355, 1),
+        background-color 0s 0.1s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.hamburger--3dx .hamburger-inner::before,
+.hamburger--3dx .hamburger-inner::after {
+    transition: transform 0s 0.1s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.hamburger--3dx.is-active .hamburger-inner {
+    background-color: transparent !important;
+    transform: rotateY(360deg);
+}
+
+.hamburger--3dx.is-active .hamburger-inner::before {
+    transform: translate3d(0, 10px, 0) rotate(45deg);
+}
+
+.hamburger--3dx.is-active .hamburger-inner::after {
+    transform: translate3d(0, -10px, 0) rotate(-45deg);
+}
+
+/* --------landing page------------------ */
+.vedia-landing-text {
+    width: 70%;
+    text-align: center;
+    margin-top: 1em;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    color: white;
+    animation: fallIn 3s ease-in-out .1s;
+    font-size: 1.2rem;
+}
+
+.vedia-landing-text .title {
+    text-transform: uppercase;
+    color: var(--pri-color);
+    line-height: 1.2em;
+}
+
+.vedia-landing-text h3 {
+    text-transform: uppercase;
+}
+
+.vedia-landing-text h4 {
+    margin: 10px 0;
+    opacity: 0.8;
+    font-style: italic;
+}
+
+.landingbtn span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.1s;
+}
+
+.landingbtn span:after {
+    content: '\2192';
+    position: absolute;
+    font-weight: bold;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.1s;
+}
+
+.landingbtn:hover span {
+    padding-right: 25px;
+}
+
+.landingbtn:hover span:after {
+    opacity: 1;
+    right: 0;
+}
+
+@keyframes fallIn {
+    from {
+        opacity: 0;
+        transform: scale(0);
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+    }
+}
+
+
+/*======================================================================================================================
+=                                       Vedia Main element Styling                                                   =
+=======================================================================================================================*/
+main section {
+    padding: 4em 5%;
+    text-align: center;
+}
+
+.mobile-header,
+.lg-header,
+.vedia-header {
+    text-transform: uppercase;
+    margin-bottom: 40px;
+    font-size: 1.3rem;
+    line-height: 1.2em;
+    animation: pup 1s ease-in;
+    font-family: var(--title-font);
+}
+
+.lg-header {
+    display: none;
+}
+
+/*------------- flexbox row------------- */
+.vedia-row>div {
+    width: 100%;
+    /* padding: 0.5em; */
+}
+
+/* -----------------Slider------------------- */
+.v-slides {
+    display: flex;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+}
+
+.v-slides::-webkit-scrollbar {
+    width: 10px;
+    height: 40px;
+    cursor: pointer;
+    background-color: transparent;
+}
+
+.v-slides::-webkit-scrollbar-thumb {
+    display: none;
+}
+
+.v-slides::-webkit-scrollbar-button:single-button {
+    background: transparent;
+    width: 30px;
+    border-style: solid;
+}
+
+.v-slides::-webkit-scrollbar-button:single-button:horizontal:increment {
+    border-width: 20px 0 20px 20px;
+    border-color: transparent transparent transparent yellowgreen;
+}
+
+.v-slides::-webkit-scrollbar-button:single-button:horizontal:decrement {
+    border-width: 20px 20px 20px 0px;
+    border-color: transparent yellowgreen transparent transparent;
+}
+
+.v-slides>div {
+    scroll-snap-align: start;
+    flex-shrink: 0;
+    background: transparent;
+}
+
+/* ----------------------------------Get to know us------------------------------------ */
+.vedia-about .about-text {
+    background-color: yellowgreen;
+    padding: 1em;
+    box-shadow: 2px 2px 4px rgb(214, 223, 197), -2px -2px 4px rgb(214, 224, 194);
+    transition: all 0.5s ease;
+    font-size: 1rem;
+    line-height: 1.7em;
+    text-align: justify;
+}
+
+.vedia-about .lg-header {
+    text-align: center;
+}
+
+.vedia-about .about-video {
+    height: 300px;
+}
+
+.about-video iframe {
+    width: 100%;
+    min-height: 100%;
+}
+
+/* -------------------------------------------------Services--------------------------------- */
+.vedia-services {
+    width: 100%;
+    background: url("../images/services-bg.jpg") center fixed no-repeat;
+    background-size: cover;
+    background-color: rgba(0, 0, 0, 0.589);
+    background-blend-mode: soft-light;
+    color: white;
+}
+
+.vedia-services .vedia-row>div {
+    box-shadow: 2px 2px 4px rgb(214, 223, 197), -2px -2px 4px rgb(214, 224, 194);
+    padding: 1em;
+    margin-bottom: 30px;
+}
+
+.vedia-services .vedia-row>div img {
+    margin: 25px auto;
+    display: block;
+}
+
+.vedia-services .vedia-row>div h4 {
+    color: yellowgreen;
+    font-family: var(--title-font);
+}
+
+.vedia-services .vedia-row>div:hover {
+    -webkit-transform: scale(1.03);
+    -ms-transform: scale(1.03);
+    transform: scale(1.03);
+    background-color: var(--pri-color);
+    transition: all .5s ease;
+    color: black;
+    overflow: hidden;
+}
+
+.vedia-services .vedia-row>div:hover h4 {
+    color: black;
+}
+
+.vedia-services .vedia-row>div:hover a {
+    color: white;
+}
+
+/* --------------------------------------------------Vedia Core Values---------------------------------------- */
+.vedia-values {
+    background-color: var(--pri-color);
+    color: white;
+    text-align: center;
+}
+
+.vedia-values .vedia-header {
+    color: black;
+}
+
+.values-text h4 {
+    font-family: var(--title-font);
+    line-height: 1.5em;
+}
+
+.vedia-values .vedia-row .vedia-col {
+    display: flex;
+    flex-flow: column;
+}
+
+.vedia-values .vedia-row .vedia-col .core {
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    margin-bottom: 25px;
+    width: 100%;
+    transition: transform 0.5s ease;
+}
+
+.vedia-values .core .c-icon {
+    font-size: 3rem;
+    color: #000;
+}
+
+.vedia-values .vedia-row .vedia-col .core .values-text {
+    text-align: left;
+    line-height: 1.2em;
+    padding-left: 1.2em;
+}
+
+.vedia-values .vedia-row .vedia-col .core .values-text h4 {
+    font-size: 1.5rem;
+}
+
+.vedia-values .vedia-row .vedia-col .core .values-text small {
+    font-size: 1rem;
+    opacity: 0.8;
+    color: black;
+}
+
+.core:hover {
+    transform: scale(1.2);
+}
+
+
+/* --------------------------------------------------Completed projects----------------------------------------- */
+.vedia-projects .vedia-row {
+    justify-content: space-between;
+}
+
+.vedia-projects .vedia-row>div {
+    padding: 0;
+    box-shadow: 2px 2px 4px rgb(214, 223, 197), -2px -2px 4px rgb(214, 224, 194);
+}
+
+.vedia-projects .vedia-row>div img {
+    width: 100%;
+    min-height: 220px;
+}
+
+.cont {
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.middle {
+    background-color: rgba(154, 205, 50, 0.5);
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    transition: opacity .5s ease;
+}
+
+.cont:hover .middle {
+    opacity: 1;
+}
+
+.web-name {
+    transition: all .5s ease-in 0.2s;
+    position: relative;
+    top: 43%;
+    font-size: 1.2rem;
+    background-color: var(--pri-color);
+    color: black;
+    padding: 0.5em 1em;
+    margin: auto;
+    text-transform: capitalize;
+}
+
+
+/* ---------------------------------------------------Testimonials--------------------------------------------- */
+.vedia-testimonials {
+    text-align: left;
+    background-color: var(--sec-color);
+}
+
+.vedia-testimonials .client-img {
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.client-img img {
+    width: 50%;
+    height: auto;
+    border-radius: 50%;
+}
+
+.vedia-testimonials .quote {
+    font-style: italic;
+}
+
+.vedia-testimonials .quote .i-left {
+    margin-right: 1em;
+}
+
+.vedia-testimonials .quote .i-right {
+    margin-left: 1em;
+}
+
+.vedia-testimonials .quote b {
+    line-height: 2em;
+    font-style: normal;
+}
+
+.vedia-testimonials .testi-slides {
+    position: relative;
+    vertical-align: middle;
+}
+
+.client {
+    display: none;
+    padding: 6em 0;
+    margin: 60px auto;
+    width: 100%;
+}
+
+.prev,
+.next {
+    cursor: pointer;
+    position: absolute;
+    left: 50%;
+    font-size: 2rem;
+    user-select: none;
+}
+
+.next {
+    bottom: 0;
+}
+
+.prev:hover,
+.next:hover {
+    color: greenyellow;
+    transform: scale(2);
+}
+
+
+/* --------------------------------------------------Blog------------------------------------------------------ */
+.vedia-blog .v-slides {
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    overflow-y: hidden;
+}
+
+.vedia-blog .v-slides>div {
+    width: 400px;
+    margin-right: 50px;
+    background: transparent;
+    padding: 1em;
+    transition: transform 0.5s ease;
+}
+
+.vedia-blog .v-slides>div:first-child {
+    padding-left: 0;
+}
+
+.vedia-blog .v-slides>div img,
+.vedia-blog .v-slides>div video {
+    height: 250px;
+    width: 100%;
+}
+
+.vedia-blog .v-slides a {
+    color: black;
+    text-transform: uppercase;
+}
+
+.vedia-blog .v-slides>div h4 a:hover {
+    text-decoration: underline;
+}
+
+.vedia-blog .v-slides>div:hover {
+    transform: scale(1.03);
+    overflow: hidden;
+}
+
+
+/*======================================================================================================================
+=                                       Vedia footer element Styling                                                   =
+=======================================================================================================================*/
+
+footer section {
+    padding: 4em 5%;
+}
+
+/* ------------------------------------------partners----------------------------------------------------------------- */
+.vedia-partners .vedia-row {
+    justify-content: space-between;
+    align-items: center;
+}
+
+.vedia-partners img {
+    padding: 1em;
+    width: 230px;
+    transition: transform ease 0.5s;
+}
+
+.vedia-partners img.round-logo {
+    width: 120px;
+    height: 120px;
+}
+
+.vedia-partners img:hover {
+    border: 1px solid var(--pri-color);
+    box-shadow: 2px 2px 10px rgb(175, 192, 141), -2px -2px 10px rgb(175, 192, 141);
+    transform: scale(0.8);
+}
+
+/* footer */
+.footer {
+    background-color: var(--pri-color);
+}
+
+.footer .vedia-row>div:not(:last-child) {
+    margin-bottom: 50px;
+}
+
+.footer a {
+    color: black;
+    text-decoration: underline;
+}
+
+.footer a:hover {
+    text-decoration: wavy;
+    opacity: 1;
+    font-weight: bold;
+}
+
+.footer h3 {
+    font-family: var(--title-font);
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    text-align: left;
+}
+
+.footer ul {
+    list-style: none;
+}
+
+
+
+.footer ul a {
+    text-transform: capitalize;
+    opacity: 0.7;
+}
+
+.footer input {
+    padding: 1.5em 1em;
+    border: none;
+    width: 100%;
+    border: 1px solid white;
+}
+
+.footer input[type="submit"] {
+    background-color: var(--sec-color);
+    cursor: pointer;
+    transition-duration: .5s;
+    font-size: 0.9rem;
+    font-weight: bold;
+    padding: 1em;
+    border: none;
+}
+
+.footer input[type="submit"]:hover {
+    background-color: black;
+    color: var(--pri-color);
+}
+
+.footer input[type="email"]:hover {
+    border: 1px solid var(--pri-color);
+}
+
+.footer .contact address {
+    text-align: right;
+    line-height: 2em;
+    opacity: 0.7;
+}
+
+.footer .contact address span {
+    font-size: 1rem;
+    float: left;
+    clear: both;
+    margin-right: 0.1em;
+}
+
+.footer .social {
+    margin-top: 20px;
+}
+
+.footer .social a {
+    padding-right: 1em;
+    font-size: 1.3rem;
+    opacity: 0.7;
+}
+
+.copyright {
+    background-color: var(--sec-color);
+    text-align: center;
+}
+
+.copyright a {
+    font-weight: bolder;
+    color: black;
+}
+
+.copyright a:hover {
+    text-decoration: underline;
+}
+
+
+@media screen and (min-width: 500px) {
+
+    /* Navigation */
+    @keyframes grow {
+        from {
+            width: 0;
+        }
+
+        to {
+            width: 70%;
+        }
+    }
+
+    .vedia-menubar ul li a {
+        padding: 1em 0;
+        font-size: 1.5rem;
+    }
+
+    .menu-close {
+        display: none;
+    }
+
+    .fixed-nav {
+        position: absolute;
+        top: 50%;
+        transform: translate(0, -50%);
+        z-index: 100;
+    }
+
+    .vedia-landing-text {
+        width: 60%;
+    }
+
+    /* -----------------------Main-------------------------------------------- */
+
+    main section {
+        padding: 4em 10%;
+    }
+
+    .vedia-row {
+        display: flex;
+        flex-flow: row wrap;
+        width: 100%;
+        /* justify-content: center;
+        padding: 0.1em;
+        align-items: center; */
+    }
+
+    /* Get to know us */
+    .vedia-about .about-text {
+        padding: 2em;
+    }
+
+    /* Services */
+    .vedia-services .vedia-row>div {
+        width: 80%;
+        margin: 0 auto 30px;
+        padding: 2em;
+    }
+
+    /* Core Values */
+    .vedia-values .vedia-row .vedia-col .core .c-icon {
+        font-size: 4rem;
+    }
+
+    .vedia-values .vedia-row .vedia-col .core .values-text h4 {
+        font-size: 2.5rem;
+    }
+
+    /* Projects */
+    .vedia-projects .vedia-row>div {
+        height: 300px;
+    }
+
+    .vedia-projects .vedia-row>div img {
+        height: 300px;
+    }
+
+
+    /* Testimonials */
+    .vedia-testimonials .testi-slides .client .client-row {
+        display: flex;
+        flex-flow: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+
+    .vedia-testimonials .testi-slides .client-img {
+        width: 20%;
+        text-align: left;
+        display: block;
+    }
+
+    .vedia-testimonials .testi-slides .client-img img {
+        width: 90%;
+    }
+
+    .vedia-testimonials .testi-slides .quote {
+        width: 75%;
+    }
+
+    /* footer */
+    .footer .vedia-row>div {
+        margin-bottom: 50px;
+        width: 50%;
+        margin: 0 auto;
+    }
+}
+
+
+@media screen and (min-width: 768px) {
+
+    /* Navigation */
+    .vedia-menubar {
+        width: 50%;
+    }
+
+    @keyframes grow {
+        from {
+            width: 0;
+        }
+
+        to {
+            width: 50%;
+        }
+    }
+
+    .vedia-landing-text {
+        width: 70%;
+    }
+
+    .vedia-landing-text .title {
+        font-size: 2.5rem;
+    }
+
+    /* --------------------------Main-------------------------- */
+    main section {
+        padding: 4em 5%;
+    }
+
+    .lg-header {
+        display: block;
+    }
+
+    .mobile-header {
+        display: none;
+    }
+
+    /* Get to know us */
+    .vedia-about .vedia-row>div {
+        width: 50%;
+        height: 400px;
+    }
+
+    .vedia-about .about-text {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    /* Services */
+    .vedia-services .vedia-row {
+        justify-content: space-between;
+    }
+
+    .vedia-services .vedia-row>div {
+        width: 45%;
+    }
+
+    .vedia-services .vedia-row>div img {
+        height: 200px;
+    }
+
+    /* Core Values */
+    .vedia-values .vedia-row>div {
+        width: 45%;
+    }
+
+    .vedia-values .vedia-row {
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .vedia-values .vedia-header {
+        text-align: left;
+    }
+
+    /* projects */
+    .vedia-projects .vedia-row>div {
+        width: 48%;
+    }
+
+    /* Blog */
+    .vedia-blog .vedia-row>div {
+        width: 31%;
+    }
+
+    /* footer */
+    .footer .vedia-row>div {
+        width: 30%;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+
+    /* ---------------------------------------Navigation--------------------------------------- */
+    .vedia-menubar {
+        width: 30%;
+    }
+
+
+    @keyframes grow {
+        from {
+            width: 0;
+        }
+
+        to {
+            width: 35%;
+        }
+    }
+
+    .fixed-nav {
+        position: fixed;
+        /* fixed on large screen */
+    }
+
+    .vedia-landing-text h1 {
+        font-size: 3.5rem;
+        line-height: 1.5em;
+    }
+
+    .vedia-landing-text .title {
+        font-size: 4rem;
+    }
+
+    .vedia-landing-text h3 {
+        font-size: 2.5rem;
+    }
+
+    .vedia-landing-text p {
+        margin: 20px 0;
+        font-style: italic;
+        color: var(--sec-color);
+    }
+
+    .vedia-landing-text .landingbtn {
+        margin-top: 100px;
+    }
+
+    /* -----------------------------------------Main-------------------------------------------- */
+    main section {
+        padding: 5em 10em !important;
+        min-height: 100vh;
+    }
+
+    /* ------------about us -----------*/
+    .vedia-about .vedia-row>div {
+        height: 450px;
+    }
+
+    .vedia-about .about-text {
+        font-size: 1.2rem;
+    }
+
+    /* -----------services--------------- */
+    .vedia-services .vedia-row>div {
+        width: 24%;
+        padding: 0.5em;
+    }
+
+    /* projects */
+    .web-name {
+        font-size: 1.5rem;
+    }
+
+    footer section {
+        padding: 4em 10em !important;
+    }
+}
+
+.hide {
+    opacity: 0;
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+        transform: scale(.7, .7)
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.fade-in-element {
+    animation: fade-in 1s ease;
+}
+
+::-webkit-scrollbar {
+    width: 15px;
+    background-color: var(--sec-color);
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(rgb(83, 116, 17), yellowgreen, rgb(83, 116, 17));
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-button:single-button {
+    background: radial-gradient(yellowgreen, rgb(83, 116, 17));
+    height: 15px;
+    border: none;
+}
+
+::-webkit-scrollbar-button:single-button:vertical:decrement {
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+::-webkit-scrollbar-button:single-button:vertical:increment {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
